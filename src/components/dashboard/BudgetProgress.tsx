@@ -63,7 +63,7 @@ export const BudgetProgress: React.FC<BudgetProgressProps> = ({
       </div>
 
       {/* Progress Bar Track */}
-      <div className="h-3 w-full bg-background border border-border rounded-full overflow-hidden">
+      <div className="h-2.5 w-full bg-background border border-border rounded-full overflow-hidden">
         <div
           className={`h-full ${progressColor} transition-all duration-500 rounded-full`}
           style={{ width: `${cappedRatio}%` }}

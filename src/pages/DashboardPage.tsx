@@ -36,6 +36,8 @@ export const DashboardPage: React.FC = () => {
     return false;
   };
 
+  const userName = profile?.name || 'User';
+
   return (
     <div className="space-y-6">
       {/* Warning banner if monthly income is 0 */}
@@ -58,9 +60,9 @@ export const DashboardPage: React.FC = () => {
 
       {/* Welcome header & quick shortcut button */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none pb-2 border-b border-border/20">
-        <div>
-          <h2 className="text-xl font-bold text-text-primary">Hai, Selamat Datang! 👋</h2>
-          <p className="text-xs text-text-secondary mt-0.5">Berikut ringkasan kondisi keuanganmu di bulan {currentMonthLabel}.</p>
+        <div className="flex flex-col gap-0.5">
+          <h2 className="text-xl font-semibold text-text-primary">{userName}</h2>
+          <span className="text-text-secondary text-sm font-medium">{currentMonthLabel}</span>
         </div>
         
         <button
@@ -95,12 +97,7 @@ export const DashboardPage: React.FC = () => {
               title="Total Pengeluaran"
               value={formatRupiah(stats.totalThisMonth)}
               subtitle={`Periode ${currentMonthLabel}`}
-              icon={<TrendingDown className="w-6 h-6 text-danger" />}
-              trend={{
-                text: stats.totalThisMonth > 1000000 ? 'Perlu Hemat' : 'Stabil',
-                isNegative: stats.totalThisMonth > 1000000,
-                isPositive: stats.totalThisMonth <= 1000000 && stats.totalThisMonth > 0
-              }}
+              icon={<TrendingDown className="w-4 h-4" />}
             />
 
             {/* 2. Transaction Count Card */}
@@ -108,10 +105,7 @@ export const DashboardPage: React.FC = () => {
               title="Jumlah Transaksi"
               value={`${stats.transactionCount} Transaksi`}
               subtitle="Telah dicatat bulan ini"
-              icon={<Hash className="w-6 h-6 text-primary" />}
-              trend={{
-                text: stats.transactionCount > 15 ? 'Aktif' : 'Normal'
-              }}
+              icon={<Hash className="w-4 h-4" />}
             />
 
             {/* 3. Top Category Card */}
@@ -119,12 +113,7 @@ export const DashboardPage: React.FC = () => {
               title="Kategori Terbesar"
               value={stats.topCategory || 'Belum Ada'}
               subtitle="Porsi belanja tertinggi"
-              icon={<Award className="w-6 h-6 text-info" />}
-              trend={
-                stats.topCategory
-                  ? { text: 'Perlu Dikurangi', isNegative: true }
-                  : undefined
-              }
+              icon={<Award className="w-4 h-4" />}
             />
 
             {/* 4. Remaining Budget Card */}
@@ -132,16 +121,7 @@ export const DashboardPage: React.FC = () => {
               title="Sisa Budget"
               value={formatRupiah(remainingBudget)}
               subtitle={monthlyIncome > 0 ? `Dari pendapatan bulan ini` : `Pendapatan belum diset`}
-              icon={<Wallet className="w-6 h-6 text-[#22C55E]" />}
-              trend={
-                monthlyIncome > 0
-                  ? {
-                      text: remainingBudget < 0 ? 'Overbudget' : 'Aman',
-                      isNegative: remainingBudget < 0,
-                      isPositive: remainingBudget >= 0
-                    }
-                  : undefined
-              }
+              icon={<Wallet className="w-4 h-4" />}
             />
           </>
         )}

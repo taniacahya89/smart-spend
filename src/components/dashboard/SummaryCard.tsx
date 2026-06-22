@@ -5,11 +5,6 @@ interface SummaryCardProps {
   value: string | number;
   subtitle: string;
   icon: React.ReactNode;
-  trend?: {
-    text: string;
-    isPositive?: boolean;
-    isNegative?: boolean;
-  };
 }
 
 export const SummaryCard: React.FC<SummaryCardProps> = ({
@@ -17,7 +12,6 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
   value,
   subtitle,
   icon,
-  trend,
 }) => {
   return (
     <div className="bg-surface border border-border rounded-xl p-5 hover:translate-y-[-2px] hover:shadow-xl hover:shadow-background/40 transition-all duration-300 select-none flex flex-col justify-between min-h-[140px]">
@@ -32,7 +26,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
         </div>
         
         {/* Icon wrapper */}
-        <div className="p-3 bg-background border border-border/80 rounded-xl text-primary shadow-inner shrink-0">
+        <div className="p-2 bg-background border border-border/80 rounded-lg text-text-secondary shadow-inner shrink-0 flex items-center justify-center">
           {icon}
         </div>
       </div>
@@ -41,20 +35,6 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
         <span className="text-xs text-text-secondary font-medium">
           {subtitle}
         </span>
-
-        {trend && (
-          <span
-            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-              trend.isPositive
-                ? 'bg-success/15 text-success'
-                : trend.isNegative
-                ? 'bg-danger/15 text-danger'
-                : 'bg-text-secondary/10 text-text-secondary'
-            }`}
-          >
-            {trend.text}
-          </span>
-        )}
       </div>
     </div>
   );

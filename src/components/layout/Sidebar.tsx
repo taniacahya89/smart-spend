@@ -16,7 +16,6 @@ export const Sidebar: React.FC = () => {
           </div>
           <div>
             <h2 className="font-bold text-lg text-text-primary leading-tight">SmartSpend</h2>
-            <span className="text-[10px] text-primary font-semibold tracking-wider uppercase">AI Financial Companion</span>
           </div>
         </div>
 
@@ -65,9 +64,8 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Footer Branding */}
-      <div className="px-2 py-4 border-t border-border/50 text-[11px] text-text-secondary/70">
-        <p className="font-medium text-text-secondary">SmartSpend v1.0.0</p>
-        <p className="mt-1">Dibuat dengan ❤️ untuk Mahasiswa Indonesia</p>
+      <div className="px-2 py-4 border-t border-border/50">
+        <p className="text-text-secondary text-xs">SmartSpend</p>
       </div>
     </aside>
   );

@@ -55,7 +55,10 @@ export const AdvisorPage: React.FC = () => {
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Intro Header */}
       <div className="flex flex-col gap-1 pb-2 border-b border-border/20 select-none">
-        <h2 className="text-xl font-bold text-text-primary">AI Financial Advisor 🤖</h2>
+        <div className="flex items-center gap-2 text-text-primary">
+          <Sparkles className="w-5 h-5 text-primary shrink-0" />
+          <h2 className="text-xl font-bold">AI Financial Advisor</h2>
+        </div>
         <p className="text-xs text-text-secondary">Dapatkan rekomendasi keuangan personal dan analisis otomatis berbasis pola belanjamu.</p>
       </div>
 

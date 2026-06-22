@@ -5,7 +5,7 @@ import { ExpenseList } from '@/components/expense/ExpenseList';
 import { ExpenseFilters } from '@/components/expense/ExpenseFilters';
 import { ConfirmationDialog } from '@/components/ui/ConfirmationDialog';
 import { Expense } from '@/types';
-import { Plus, X } from 'lucide-react';
+import { Plus, X, ReceiptText } from 'lucide-react';
 
 export const ExpensesPage: React.FC = () => {
   const {
@@ -110,7 +110,10 @@ export const ExpensesPage: React.FC = () => {
       {/* Top Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none pb-2 border-b border-border/20">
         <div>
-          <h2 className="text-xl font-bold text-text-primary">Catatan Pengeluaran 💸</h2>
+          <div className="flex items-center gap-2 text-text-primary">
+            <ReceiptText className="w-5 h-5 text-primary shrink-0" />
+            <h2 className="text-xl font-bold">Catatan Pengeluaran</h2>
+          </div>
           <p className="text-xs text-text-secondary mt-0.5">Kelola, cari, dan kelompokkan seluruh transaksi pengeluaranmu.</p>
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AdvisorAnalysis } from '@/types';
-import { Sparkles, RefreshCw, CheckCircle2, TrendingUp, AlertTriangle, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Sparkles, RefreshCw, CheckCircle2, TrendingUp, AlertTriangle, ShieldCheck, AlertCircle, Lightbulb } from 'lucide-react';
 
 interface AdvisorResultProps {
   result: AdvisorAnalysis;
@@ -21,7 +21,7 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
     switch (rating) {
       case 'hemat':
         return {
-          label: 'Hemat 👍',
+          label: 'Hemat',
           bg: 'bg-[#22C55E]/15 border-[#22C55E]/30',
           text: 'text-[#22C55E]',
           icon: <ShieldCheck className="w-5 h-5" />,
@@ -29,7 +29,7 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
         };
       case 'normal':
         return {
-          label: 'Wajar / Normal ⚖️',
+          label: 'Wajar / Normal',
           bg: 'bg-[#FBBF24]/15 border-[#FBBF24]/30',
           text: 'text-[#FBBF24]',
           icon: <CheckCircle2 className="w-5 h-5" />,
@@ -37,7 +37,7 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
         };
       case 'boros':
         return {
-          label: 'Boros 🚨',
+          label: 'Boros',
           bg: 'bg-[#F43F5E]/15 border-[#F43F5E]/30',
           text: 'text-[#F43F5E]',
           icon: <AlertTriangle className="w-5 h-5" />,
@@ -45,7 +45,7 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
         };
       case 'tidak_dapat_dinilai':
         return {
-          label: 'Belum Dinilai ❓',
+          label: 'Belum Dinilai',
           bg: 'bg-text-secondary/15 border-text-secondary/30',
           text: 'text-text-secondary',
           icon: <AlertCircle className="w-5 h-5" />,
@@ -114,7 +114,7 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
       {highlight && (
         <div className="p-4 bg-primary/10 border border-primary/20 rounded-xl flex items-start gap-3 animate-fade-in">
           <div className="p-1.5 bg-primary/20 rounded-lg text-primary shrink-0">
-            <span className="text-base leading-none">💡</span>
+            <Lightbulb className="w-5 h-5" />
           </div>
           <div className="min-w-0">
             <h5 className="text-xs font-bold text-text-primary uppercase tracking-wider">AI Highlight</h5>
@@ -135,8 +135,8 @@ export const AdvisorResult: React.FC<AdvisorResultProps> = ({
 
       {/* Actionable Suggestions */}
       <div className="space-y-3.5">
-        <h4 className="text-xs font-bold text-text-secondary uppercase tracking-wider">
-          💡 3 Saran Konkret untuk Bulan Depan
+        <h4 className="text-xs font-bold text-text-secondary uppercase tracking-wider flex items-center gap-1.5">
+          <Lightbulb className="w-4 h-4 text-primary" /> 3 Saran Konkret untuk Bulan Depan
         </h4>
         <div className="grid grid-cols-1 gap-3">
           {saran.map((item, idx) => (

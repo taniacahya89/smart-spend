@@ -62,12 +62,12 @@ export const AdvisorChat: React.FC<AdvisorChatProps> = ({
                 <div
                   className={`max-w-[85%] sm:max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                     isUser
-                      ? 'bg-primary text-text-primary rounded-tr-sm shadow-md shadow-primary/10'
-                      : 'bg-background border border-border text-text-primary rounded-tl-sm'
+                      ? 'bg-[#6C63FF] text-white rounded-tr-sm shadow-md shadow-[#6C63FF]/15'
+                      : 'bg-[#2A2D3A] border border-border/50 text-text-primary rounded-tl-sm'
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{msg.content}</p>
-                  <span className={`block text-[9px] text-right mt-1.5 ${isUser ? 'text-text-primary/70' : 'text-text-secondary'}`}>
+                  <span className={`block text-[9px] text-right mt-1.5 ${isUser ? 'text-white/70' : 'text-text-secondary'}`}>
                     {new Intl.DateTimeFormat('id-ID', {
                       hour: '2-digit',
                       minute: '2-digit'

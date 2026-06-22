@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useProfile } from '@/hooks/useProfile';
-import { User, Loader2, Sparkles, AlertCircle } from 'lucide-react';
+import { User, Loader2, Sparkles, AlertCircle, Settings } from 'lucide-react';
 
 export const SettingsPage: React.FC = () => {
   const { profile, isLoading, isSaving, error: fetchError, updateProfile } = useProfile();
@@ -71,7 +71,10 @@ export const SettingsPage: React.FC = () => {
     <div className="max-w-2xl mx-auto space-y-6 select-none animate-fade-in">
       {/* Page Header */}
       <div className="flex flex-col gap-1 pb-2 border-b border-border/20">
-        <h2 className="text-xl font-bold text-text-primary">Pengaturan Profil & Budget ⚙️</h2>
+        <div className="flex items-center gap-2 text-text-primary">
+          <Settings className="w-5 h-5 text-primary shrink-0" />
+          <h2 className="text-xl font-bold">Pengaturan Profil & Budget</h2>
+        </div>
         <p className="text-xs text-text-secondary">Sesuaikan nama dan pendapatan bulanan Anda untuk analisis AI yang akurat.</p>
       </div>
 

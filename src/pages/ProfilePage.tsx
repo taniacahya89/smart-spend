@@ -21,7 +21,10 @@ export const ProfilePage: React.FC = () => {
     <div className="max-w-2xl mx-auto space-y-6 select-none">
       {/* Page Header */}
       <div className="flex flex-col gap-1 pb-2 border-b border-border/20">
-        <h2 className="text-xl font-bold text-text-primary">Profil Saya 👤</h2>
+        <div className="flex items-center gap-2 text-text-primary">
+          <User className="w-5 h-5 text-primary shrink-0" />
+          <h2 className="text-xl font-bold">Profil Saya</h2>
+        </div>
         <p className="text-xs text-text-secondary">Kelola informasi akun dan tinjau performa pencatatanmu.</p>
       </div>
 

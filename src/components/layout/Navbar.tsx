@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ title, isDarkMode, toggleDarkMod
 
             <button
               onClick={() => signOut()}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium text-danger/80 hover:text-danger hover:bg-danger/10 border border-transparent hover:border-danger/20 transition-all active:scale-[0.97]"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary hover:text-danger hover:bg-danger/10 border border-transparent hover:border-danger/20 transition-all active:scale-[0.97]"
               title="Keluar dari akun"
             >
               <LogOut className="w-4 h-4" />
